@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ingestion Firewall</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 3.5 19 6v5.1c0 4.5-2.9 7.7-7 9.4-4.1-1.7-7-4.9-7-9.4V6l7-2.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="eyebrow">AI · STRUCTURED DATA · VALIDATION</div>
+      <h1>Make every message<br>understandable.</h1>
+      <p>Turn unstructured customer messages into validated, actionable data with AI-powered intent analysis.</p>
+    </header>
+
+    <section class="panel">
+      <div class="input-heading">
+        <label for="message">Your message</label>
+        <span class="char-count" id="char-count">0 / 5000</span>
+      </div>
+      <textarea id="message" rows="5" maxlength="5000" placeholder="Try: Hi there!&#10;Or: Where is my order?&#10;Or: My payment was deducted twice."></textarea>
+      <div class="examples">
+        <span class="examples-label">Try an example</span>
+        <button type="button" class="example" data-message="Hi, good morning!">Greeting</button>
+        <button type="button" class="example" data-message="Where is my order?">Order tracking</button>
+        <button type="button" class="example" data-message="My payment was deducted twice. Please help urgently.">Payment issue</button>
+        <button type="button" class="example" data-message="What time is it now?">Current time</button>
+      </div>
+      <button id="submit" class="primary">Analyze message <span aria-hidden="true">→</span></button>
+      <p id="status" class="status" role="status" aria-live="polite">Ready to analyze · Local API</p>
+    </section>
+
+    <section class="panel result-panel">
+      <div class="result-heading">
+        <div>
+          <div class="eyebrow">RESPONSE</div>
+          <h2>Validated JSON</h2>
+         </div>
+        <button id="copy" class="secondary" disabled>Copy JSON</button>
+      </div>
+      <pre id="result"><code>Your structured result will appear here.</code></pre>
+      <p class="footnote">This demo classifies messages only. It does not actually retrieve orders or the current time. Token counts are estimates, not billing records.</p>
+    </section>
+    <footer>Built with FastAPI · Groq · Instructor · Pydantic</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
